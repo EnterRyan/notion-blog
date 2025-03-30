@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { normalize, PostList } from '@entities-server/post';
 
 import { notion } from '@shared-server/notionInstance';
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import { PageObjectResponse, PartialPageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export async function GET(){
   const dataBaseId = process.env.NOTION_DB_ID;
@@ -11,7 +11,9 @@ export async function GET(){
     database_id : dataBaseId!,
   })
   
-  const postList = normalize(response.results); 
+  console.log(response);
+
+  const postList = normalize(response.results as (PageObjectResponse | PartialPageObjectResponse)[]);
 
   return NextResponse.json(postList);
 }

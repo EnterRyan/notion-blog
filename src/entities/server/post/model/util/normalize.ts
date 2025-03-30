@@ -8,9 +8,11 @@ function isFullPageObject(
   return page.object === 'page';
 }
 
-export function normalize(postList:QueryDatabaseResponse['results']):PostList{
+export function normalize( 
+  postList: (PageObjectResponse | PartialPageObjectResponse)[])
+  :PostList{
   const responseData = new Array<Post>;
-  postList.map((item)=>{
+  postList.forEach((item)=>{
     if (isFullPageObject(item)) {
       responseData.push(extraData(item));
     }
