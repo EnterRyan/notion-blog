@@ -6,7 +6,8 @@ import { PageObjectResponse, PartialPageObjectResponse, QueryDatabaseResponse } 
 
 export async function GET(){
   const dataBaseId = process.env.NOTION_DB_ID;
-
+  if (!dataBaseId) throw new Error('데이터베이스 ID가 없습니다');
+  
   const response:QueryDatabaseResponse = await notion.databases.query({
     database_id : dataBaseId!,
   })
