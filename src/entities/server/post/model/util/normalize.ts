@@ -1,6 +1,6 @@
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { Post, PostList, PostState } from '../types/postListType';
-import { notionApiDate, notionApiGroup, notionApiState, notionApiTags, notionApititle } from '../types/notionApiTypes';
+import { Post, PostList } from '../types/postListType';
+import { notionApiDate, notionApiGroup, notionApiState, notionApiTags, notionApiTitle } from '../types/notionApiTypes';
 
 export function normalize(postList:PageObjectResponse[]):PostList{
   const reponseData = new Array<Post>;
@@ -11,7 +11,7 @@ export function normalize(postList:PageObjectResponse[]):PostList{
 }
 
 function extraData(pageData:PageObjectResponse):Post{
-  const name = pageData.properties['Name'] as notionApititle;
+  const name = pageData.properties['Name'] as notionApiTitle;
   const tags = pageData.properties['Tags'] as notionApiTags;
   const state = pageData.properties['state'] as notionApiState;
   const group = pageData.properties['group'] as notionApiGroup;
