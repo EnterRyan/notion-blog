@@ -1,1 +1,1 @@
-export * from './ui/PostViewer'
+export {default as PostViewer} from './ui/PostViewer';
