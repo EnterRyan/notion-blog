@@ -1,5 +1,5 @@
 
-import { PostViewer } from "@entities-client/post";
+import { PostViewer } from "@entities-client/notionReder";
 import { getNotionPageData } from "../model/getNotionPageData";
 
 export default async function ViewPostPage({ pageId }: { pageId: string }){

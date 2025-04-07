@@ -1,0 +1,1 @@
+export {default as ViewPostPage} from './ui/ViewPostPage'
