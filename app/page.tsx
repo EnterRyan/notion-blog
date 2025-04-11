@@ -1,6 +1,6 @@
 export default function Main(){
   return (
-    <main>
+    <main className="h-1hv">
       hi
     </main>
   )
