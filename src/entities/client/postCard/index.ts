@@ -1,1 +1,1 @@
-export * from './ui/PostCard'
+export {default as 'PostCard'} from './ui/PostCard'
