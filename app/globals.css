@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .grid-layout-main {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "side contents"
+      "footer contents";
+    grid-template-columns: 400px 1fr;
+  }
+
+  .area-header {
+    grid-area: header;
+  }
+  .area-side {
+    grid-area: side;
+  }
+  .area-contents {
+    grid-area: contents;
+  }
+  .area-footer {
+    grid-area: footer;
+  }
+}
+
+/* @media(){
+
+} */
