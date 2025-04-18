@@ -8,7 +8,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html lang="ko">
      <body className="grid-layout-main h-screen">
-      <div className="area-header h-1"><Header /></div>
+      <div className="area-header"><Header /></div>
       <div className="area-side"><SideNavigator /></div>
       <main className="area-contents">{children}</main>
       <footer className="area-footer"><Footer /></footer>

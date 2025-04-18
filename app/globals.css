@@ -1,13 +1,31 @@
 @import "tailwindcss";
 
+/* 테마설정 */
+body {
+  @apply bg-white text-black transition-colors duration-300;
+}
+
+html.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+
+@layer base{
+  *{
+    box-sizing: border-box;
+  }
+}
+
 @layer utilities {
+  /*레이아웃 */
   .grid-layout-main {
     display: grid;
     grid-template-areas:
       "header header"
       "side contents"
       "footer contents";
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
   }
 
   .area-header {
@@ -22,8 +40,39 @@
   .area-footer {
     grid-area: footer;
   }
+
+  /* 폰트 설정 */
+  .font-blod-top {
+    @apply text-4xl font-bold;
+  }
+  .font-bold-middle{
+    @apply text-2xl font-bold;
+  }
 }
 
-/* @media(){
+/* mobile */
+@media(max-width : 767px){
+  /* 사이드 네비게이션 처리 */
+  .area-side{
+    display:none;
+  }
+  /* 레이아웃 */
+  .grid-layout-main{
+    grid-template-areas: 
+    "header"
+    "contents"
+    "footer"
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
 
-} */
+  /* 폰트 설정 */
+  .font-blod-top {
+    @apply text-3xl font-bold;
+  }
+  .font-bold-middle{
+    @apply text-2xl font-bold;
+  }
+
+}
