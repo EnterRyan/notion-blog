@@ -1,7 +1,7 @@
 export default function Main(){
   return (
     <main className=''>
-      hi
+      there is Post List Section
     </main>
   )
 }

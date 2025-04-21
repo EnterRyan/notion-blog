@@ -7,12 +7,12 @@ import './globals.css'
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="ko">
-     <body className="grid-layout-main h-screen">
-      <div className="area-header"><Header /></div>
-      <div className="area-side"><SideNavigator /></div>
-      <main className="area-contents">{children}</main>
-      <footer className="area-footer"><Footer /></footer>
-    </body>
+      <body className="grid-layout-main h-screen">
+        <div className="area-header"><Header /></div>
+        <div className="area-side"><SideNavigator /></div>
+        <main className="area-contents">{children}</main>
+        <footer className="area-footer"><Footer /></footer>
+      </body>
     </html>
   );
 }
