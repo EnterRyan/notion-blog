@@ -6,6 +6,7 @@ export type Post = {
   group : string,
   createDate : string,
   pageId :string
+  thumbnail : string;
 }
 
 export type PostList = Post[];

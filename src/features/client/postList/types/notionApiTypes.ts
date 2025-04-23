@@ -7,5 +7,6 @@ type notionApiTags = Extract<PropertyValue,{type:'multi_select'}>;
 type notionApiState = Extract<PropertyValue,{type:'status'}>;
 type notionApiGroup = Extract<PropertyValue,{type:'rich_text'}>;
 type notionApiDate = Extract<PropertyValue,{type:'date'}>;
+type notionThumbnail = Extract<PropertyValue,{type:'files'}>
 
-export type {notionApiTitle,notionApiTags, notionApiState, notionApiGroup ,notionApiDate};
+export type {notionApiTitle,notionApiTags, notionApiState, notionApiGroup ,notionApiDate, notionThumbnail};

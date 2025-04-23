@@ -15,6 +15,7 @@ export default async function PostListFetcher(){
         pageId={item.pageId}
         state={item.state}
         tags={item.tags}
+        thumbnail={item.thumbnail}
         />
       ))}
     </div>

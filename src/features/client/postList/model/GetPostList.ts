@@ -10,6 +10,7 @@ export async function GetPostList(){
   const response:QueryDatabaseResponse = await notion.databases.query({
      database_id : dataBaseId!,
    })
+   
   const postList = normalize(response.results as PageObjectResponse[]);
   return postList;
 }
