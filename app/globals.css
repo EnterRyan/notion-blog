@@ -36,6 +36,7 @@ html.dark body {
   }
   .area-contents {
     grid-area: contents;
+    overflow-x: scroll;
   }
   .area-footer {
     grid-area: footer;
