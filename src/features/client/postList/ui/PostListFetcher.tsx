@@ -5,7 +5,7 @@ export default async function PostListFetcher(){
   const result = await GetPostList();
 
   return (
-    <div className="PostList">
+    <div className="flex flex-row gap-5 flex-wrap">
       {result.map((item,index)=>(
         <PostCard 
         key={`${item}${index}`}

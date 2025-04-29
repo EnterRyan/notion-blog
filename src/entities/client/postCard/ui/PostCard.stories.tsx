@@ -20,7 +20,7 @@ export const postCard: Story = {
     createDate: '2025-04-23',
     pageId: 'test-id-123',
     state: '진행 중',
-    tags: ['Next.js', 'Notion API', 'TailwindCSS'],
+    tags: ['Next', 'TypeScript', 'TailwindCSS'],
     thumbnail: "defaultThumbnail.png", // 혹시 썸네일을 이미지로 보여주고 싶다면 이쪽도 업데이트 필요
   },
 };
