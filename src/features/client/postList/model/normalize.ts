@@ -31,6 +31,6 @@ function extraData(pageData:PageObjectResponse):Post{
       : thumbnail?.files?.[0]?.
       type === 'external'
       ? thumbnail.files[0].external.url
-      : '',
+      : '/defaultThumbnail.png',
   }
 }

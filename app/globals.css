@@ -43,11 +43,14 @@ html.dark body {
   }
 
   /* 폰트 설정 */
-  .font-blod-top {
+  .font-bold-top {
     @apply text-4xl font-bold;
   }
   .font-bold-middle{
     @apply text-2xl font-bold;
+  }
+  .font-post-title{
+    @apply text-xl font-bold;
   }
 }
 
