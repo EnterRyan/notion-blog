@@ -2,7 +2,7 @@
 
 /* 테마설정 */
 body {
-  @apply bg-white text-black transition-colors duration-300;
+  @apply bg-gray-200 text-black transition-colors duration-300;
 }
 
 html.dark body {

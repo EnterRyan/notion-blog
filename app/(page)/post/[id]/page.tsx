@@ -6,9 +6,10 @@ interface PostPageProps {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
+  const {id} = await params;
   return (
     <div>
-      <ViewPostPage pageId={params.id} />
+      <ViewPostPage pageId={id} />
     </div>
   );
 }
