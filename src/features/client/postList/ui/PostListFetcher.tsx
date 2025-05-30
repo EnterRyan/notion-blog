@@ -5,7 +5,7 @@ export default async function PostListFetcher(){
   const result = await GetPostList();
 
   return (
-    <div className="w-full p-[1.5rem] bg-amber-200">
+    <div className="w-full p-[1.5rem]">
       <div className="grid gap-5 justify-center grid-cols-[repeat(auto-fit,minmax(400px,400px))]">
         {result.map((item,index)=>(
           <PostCard 

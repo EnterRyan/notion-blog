@@ -36,7 +36,7 @@ html.dark body {
   }
   .area-contents {
     grid-area: contents;
-    overflow-x: scroll;
+    overflow-y: scroll;
   }
   .area-footer {
     grid-area: footer;
@@ -52,6 +52,27 @@ html.dark body {
   .font-post-title{
     @apply text-xl font-bold;
   }
+
+  /*컨탠츠 영역 레이아웃*/
+  .grid-contents-layout{
+    display: grid;
+    grid-template-areas: 
+      "post post"
+      "project study"
+    ;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 1fr;
+  }
+  .area-post{
+    grid-area : post;
+  }
+  .area-project{
+    grid-area:project;
+  }
+  .area-study{
+    grid-area:study;
+  }
+  
 }
 
 /* mobile */
