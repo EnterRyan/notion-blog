@@ -60,11 +60,12 @@ html.dark body {
       "post post"
       "project study"
     ;
-     grid-template-columns: 1fr 1fr;
-     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75% 25%;
   }
   .area-post{
     grid-area : post;
+    /* overflow-y: scroll; */
   }
   .area-project{
     grid-area:project;
