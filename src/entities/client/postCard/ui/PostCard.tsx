@@ -6,7 +6,7 @@ import { Tag } from "src/shared/ui";
 export default function PostCard({title,group,createDate,pageId,tags, thumbnail}:Post){
   return (
     <Link href={`/post/${pageId}`} >
-      <div className="bg-white max-w-[400px]">
+      <div className="bg-white max-w-[400px] rounded-lg">
         <div className="relative w-[400px] h-[200px]">
           <Image src={thumbnail} alt="썸네일" fill className="rounded-lg object-cover"/>
         </div>
