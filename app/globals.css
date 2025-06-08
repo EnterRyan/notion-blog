@@ -26,6 +26,8 @@ html.dark body {
       "footer contents";
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
+    max-width: 1650px;
+    margin: auto;
   }
 
   .area-header {
@@ -36,7 +38,6 @@ html.dark body {
   }
   .area-contents {
     grid-area: contents;
-    overflow-y: scroll;
   }
   .area-footer {
     grid-area: footer;

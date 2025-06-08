@@ -1,14 +1,18 @@
 import { NextRequest } from "next/server";
 import { notion } from "@shared-server/notionInstance";
 
-export async function GET(req:NextRequest,{params}:{params:{page_id:string}}){
-  const id = params.page_id;
+type getParamType = {
+  params:Promise<{page_id:string}>
+}
+
+export async function GET(req:NextRequest,{params}:getParamType){
+  const {page_id} = await params;
   try{
     const blocks = await notion.blocks.children.list({
-      block_id:id,
+      block_id:page_id,
     });
     return Response.json({
-      id, 
+      page_id, 
       content: blocks,
     })  
   }
