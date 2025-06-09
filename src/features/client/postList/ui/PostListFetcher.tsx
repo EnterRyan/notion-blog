@@ -6,7 +6,7 @@ export default async function PostListFetcher(){
 
   return (
     <div className="w-full h-full p-[30px]">
-      <div className="overflow-scroll h-full grid gap-5 justify-center grid-cols-[repeat(auto-fit,minmax(400px,400px))]">
+      <div className="overflow-y-scroll overflow-x-hidden h-full grid gap-5 justify-center grid-cols-[repeat(auto-fit,minmax(400px,400px))]">
         {result.map((item,index)=>(
           <PostCard 
             key={`${item}${index}`}
