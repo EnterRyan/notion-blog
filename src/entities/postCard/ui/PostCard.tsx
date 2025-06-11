@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
-import { Post } from "@entities-server/post/type/postListType";
-import { Tag } from "src/shared/ui";
+import { Post } from "src/shared/common/types/postListType";
+import { Tag } from "src/shared/common/ui/tag";
 
 export default function PostCard({title,group,createDate,pageId,tags, thumbnail}:Post){
   return (

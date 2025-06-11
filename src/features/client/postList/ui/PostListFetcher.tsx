@@ -1,4 +1,4 @@
-import { PostCard } from "@entities-client/postCard";
+import { PostCard } from "src/entities/postCard";
 import { GetPostList } from "../model/GetPostList";
 
 export default async function PostListFetcher(){

@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
 
-import { notion } from '@shared-server/notionInstance';
+import { notion } from '@shared-server/instances/notionInstance';
 import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
-import { normalize } from '@features-client/postList/model/normalize';
+import { normalize } from 'src/shared/common/utils/normalize';
 
 export async function GET(){
   const dataBaseId = process.env.NOTION_DB_ID;

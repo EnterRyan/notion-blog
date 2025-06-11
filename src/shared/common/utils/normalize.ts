@@ -1,6 +1,6 @@
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { Post, PostList } from '../../../../entities/server/post/type/postListType';
-import { notionApiDate, notionApiGroup, notionApiState, notionApiTags, notionApiTitle, notionThumbnail } from '../types/notionApiTypes';
+import { Post, PostList } from '../types/postListType';
+import { notionApiDate, notionApiGroup, notionApiState, notionApiTags, notionApiTitle, notionThumbnail } from '../../../features/client/postList/types/notionApiTypes';
 
 export function normalize(postList:PageObjectResponse[]):PostList{
   const responseData = new Array<Post>;

@@ -1,5 +1,5 @@
-import { notion } from '@shared-server/notionInstance';
-import { normalize } from './normalize';
+import { notion } from '@shared-server/instances/notionInstance';
+import { normalize } from '../../../../shared/common/utils/normalize';
 import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 
 
