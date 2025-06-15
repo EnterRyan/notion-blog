@@ -1,4 +1,4 @@
-import { PostListFetcher } from "@features-client/postList";
+import { PostListFetcher } from "@features-server/postList";
 
 export default function PostListPage(){
   return(

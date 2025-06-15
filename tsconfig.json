@@ -20,12 +20,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      //"@/*": ["./*"],
       "@shared-client/*": ["src/shared/client/*"],
       "@shared-server/*": ["src/shared/server/*"],
+      "@shared-common/*": ["src/shared/common/*"],
 
-      "@entities-client/*": ["src/entities/client/*"],
-      "@entities-server/*": ["src/entities/server/*"],
+      "@entities/*": ["src/entities/*"],
 
       "@features-client/*": ["src/features/client/*"],
       "@features-server/*": ["src/features/server/*"],

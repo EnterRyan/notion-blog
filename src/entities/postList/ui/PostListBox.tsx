@@ -1,9 +1,11 @@
-import { PostCard } from "src/entities/postCard";
-import { GetPostList } from "../model/GetPostList";
+import { PostList } from "@shared-common/types/postListType";
+import { PostCard } from "@entities/postCard";
 
-export default async function PostListFetcher(){
-  const result = await GetPostList();
+type PostListBoxType = {
+  result:PostList;
+}
 
+export default function PostListBox({result}:PostListBoxType){
   return (
     <div className="w-full h-full p-[30px]">
       <div className="overflow-y-scroll overflow-x-hidden h-full grid gap-5 justify-center grid-cols-[repeat(auto-fit,minmax(400px,400px))]">

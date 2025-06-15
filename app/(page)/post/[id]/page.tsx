@@ -1,4 +1,4 @@
-import { ViewPostPage } from '@features-client/post';
+import { ViewPostPage } from '@features-server/post';
 
 //test id 1c684787-4098-8069-8305-c6d7cbe607b2
 type PostPageProps = {
