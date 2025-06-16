@@ -1,44 +1,126 @@
-# Notion Api를 통한 블블로그만들기
+# Notion API 기반 블로그 만들기
 
-## 기능적 요구사항
-### 1. 포스팅 카테고리는 아래와 같이 분류하며 각각의 NotionDB를 구성해 놔야한다.
-  A.포스팅 DB 리스트
-    - 기술블로깅
-    - 교육/학습 블로깅 (강의, UI/UX분석, 코딩테스트 회고, Js기본함수 등)
-    - 잡담 블로깅 (주간간 회고, 책)
+이 프로젝트는 Next.js와 TanStack Query를 학습하고, 실전에서 사용할 수 있는 개인 기술 블로그를 만드는 것을 목표로 합니다.
+Notion DB를 Headless CMS처럼 활용하며, SSR과 CSR을 적절히 혼합한 구조로 구현됩니다.
 
-  B. 모든 NotionDB는 아래의 컬럼을 가지고 있어야 한다.
-    - Name | group | tags | Created Date | state | Thumbnai
+아키텍처는 FSD(Feature-Sliced Design) 패턴을 따르며, 클라이언트 전역 상태 관리는 Zustand를 사용합니다.
 
-### 2.각 페이지 기능 구성
-  A. MainPage(/) 의 메인 Container
-    - 3개의 DB의 가장 최신글을 보여준다.
-    - 기술블로깅은 6개의 PostCard를 활용하여 나타냄
-    - 교육/학습, 잡담 블로깅은 텍스트 테이블로 나타낸다.
-    - 각 그리드는 더보기 또는 자세히 보기 같은 UI요소가 있어야하고 각 요소는 각 카테고리만 보는 PostList로 라우팅 되어야 함.
+---
 
-  B. MainPage(/)의 해더
-    - 메인 페이지로 돌아가는 로고 
-    - 포트폴리오로 링크된 AboutMe
-    - Github 프로필로 링크된 Github 아이콘
-    - 테마 변경을 위한 스위칭 버튼
+## 📌 주요 기능
 
-  C. MainPage(/)의 사이드 네비게이터
-    - 아이콘 박스 및 간단한 문구를 적을 수 있는 택스트 박스
-    - 검색을 위한 검색 인풋
-    - Tags를 집계한 태그 리스트 ex) React 10
+### 📚 포스팅 카테고리 및 DB 구성
+- 각 카테고리는 별도의 Notion DB로 구성합니다.
+- 카테고리 목록:
+  - 기술 블로깅
+  - 교육/학습 (강의, UI/UX 분석, 코테 회고 등)
+  - 잡담 (회고, 독서 등)
 
-  D. PostList(/post-list)
-    - 동적 라우팅으로 각 카테고리의 포스트 리스트를 받아옴
-    - TanStackQuery를 통한 무한스크롤링 적용.
+#### 📄 공통 DB 필드
+- `Name`, `Group`, `Tags`, `Created Date`, `State`, `Thumbnail`
 
-  E. PostDetail(/post-detail)
-    - 동적 라우팅으로 notion-render-x에게 PageId를 전달
-    - 동적 라우팅으로 해당 Post의 댓글을 전달
-    - 위 두 컴포넌트를 조합하는 컴포넌트를 랜더링
+### 📊 통계 페이지 컨탠츠
+- 태그 분포 → 원형 그래프로 시각화
+- 날짜별 글 작성 → GitHub 잔디 스타일 시각화
+- 카테고리별 포스팅 수 → 막대 그래프 등으로 표현 예정
 
-  F. 통계 페이지(/statistic)
-    - 적절한 라이브러리를 채택해서 그래프 형태로 보여줄 예정.
-    - 태그 카운트, 최근에 글을 언제 작성했는지, 카테고리별 분포도 등.
+---
 
-### 3.랜더링 전략
+## 🧭 페이지별 구성
+
+#### Header
+- 로고 (홈 링크), About Me, GitHub 링크, 다크모드 토글 버튼
+
+#### Side Navigation
+- 소개 문구 박스
+- 검색창 (URL 쿼리로 검색어 전달)
+- 태그별 포스트 수 리스트
+
+### `/` 메인 페이지
+- **기술 블로깅**: `PostCard` 형태로 최신 6개 출력
+- **교육/학습, 잡담**: `PostTableRow` 형태로 제목만 노출
+- 각 섹션은 '더보기' 버튼 → 해당 카테고리로 이동 (`/posting/[category]`)
+
+### `/posting/[category]` 포스팅 리스트
+- 카테고리별 무한스크롤
+- TanStack Query + Intersection Observer(감지div) 기반 CSR 렌더링
+
+### `/post/[id]` 포스팅 상세 페이지
+- SSR로 메타데이터 구성 (SEO 최적화)
+- CSR로 `notion-render-x` 렌더링
+- 댓글 컴포넌트도 CSR 렌더링
+
+### `/stats` 통계 페이지
+- 태그별 빈도수, 카테고리별 글 개수, 날짜별 작성 추이 등을 시각화
+- (예정) GitHub-style heatmap 추가
+
+---
+
+## 🚦 렌더링 전략 요약
+
+| 페이지 | SSR | CSR | 비고 |
+|--------|-----|-----|------|
+| `/` 메인 | ✅ | ❌ | 메인 포스팅, 태그 목록은 SSR |
+| `/posting/[category]` | ❌ | ✅ | 무한스크롤 적용 |
+| `/post/[id]` | ✅ | ✅ | SEO 위해 메타데이터 SSR, 본문 및 댓글은 CSR |
+| `/stats` | 선택 | 선택 | 라이브러리에 따라 결정 |
+
+---
+
+## ⚙️ 기술 스택
+
+- Next.js (App Router)
+- TypeScript
+- TailwindCSS
+- Notion API
+- TanStack Query
+- notion-render-x
+- zustand
+- (예정) Chart.js or Recharts
+
+---
+
+## 🧱 폴더 구조 예시 (FSD)
+
+```bash
+/app
+  ├── (page)
+  │    ├──posting/[category]/page.tsx
+  │    ├──post/[id]/page.tsx
+  │    └──stats/page.tsx
+  ├── api/
+  │    └post/[id]/page.tsx
+  ├── layout.tsx
+  └── page.tsx
+/src
+  ├── entities/
+  ├── features/
+  ├── widgets/
+  ├── shared/
+```
+
+---
+
+## 🚀 (2025.06.16)개발 계획 (TODO)
+
+- [ ] 메인 페이지 SSR 컴포넌트가 사용할 notionApi 가져오기 함수 구현(CSR에서도 재사용가능하게 모듈화)
+- [ ] 메인 페이지 레이아웃 전체 구성
+- [ ] PostCard 스타일 개선
+- [ ] 메인 페이지에서 이동할 라우팅 구현
+
+---
+
+# 1. 의존성 설치
+yarn install
+
+# 2. 개발 서버 실행
+- yarn dev
+- yarn storybook
+
+# 3. 환경 변수 설정 (.env.local)
+NOTION_TOKEN=your_notion_token
+DATABASE_ID_TECH=xxx
+DATABASE_ID_EDU=xxx
+...
+
+last update : 2025.06.16
