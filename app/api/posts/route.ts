@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 
-import { notion } from '@shared-server/instances/notionInstance';
+import { notion } from '@shared-server/notionInstances/notionInstance';
 import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 import { normalize } from 'src/shared/common/utils/normalize';
 

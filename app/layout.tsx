@@ -2,8 +2,9 @@ import { Header } from '@widgets/header';
 import { Footer } from '@widgets/footer';
 
 import { SideNavigator } from '@widgets/sideNavigator';
-import ReactQueryProvider from '@shared-client/providers/ReactQueryProvider';
+
 import './globals.css'
+import ReactQueryProvider from '@shared-client/providers/tanstackquery/ReactQueryProvider';
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (

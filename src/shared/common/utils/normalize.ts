@@ -1,6 +1,7 @@
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { Post, PostList } from '../types/postListType';
-import { notionApiDate, notionApiGroup, notionApiState, notionApiTags, notionApiTitle, notionThumbnail } from '../types/notionApiTypes';
+
+import { NotionApiDate, NotionApiGroup, NotionApiState, NotionApiTags, NotionApiTitle, NotionThumbnail } from '../types/notionApiTypes';
+import { Post, PostList } from '@shared-common/types';
 
 export function normalize(postList:PageObjectResponse[]):PostList{
   const responseData = new Array<Post>;
@@ -11,12 +12,12 @@ export function normalize(postList:PageObjectResponse[]):PostList{
 }
 
 function extraData(pageData:PageObjectResponse):Post{
-  const name = pageData.properties['Name'] as notionApiTitle;
-  const tags = pageData.properties['Tags'] as notionApiTags;
-  const state = pageData.properties['state'] as notionApiState;
-  const group = pageData.properties['group'] as notionApiGroup;
-  const createdDate = pageData.properties['Created Date'] as notionApiDate;
-  const thumbnail = pageData.properties['Thumbnail'] as notionThumbnail;
+  const name = pageData.properties['Name'] as NotionApiTitle;
+  const tags = pageData.properties['Tags'] as NotionApiTags;
+  const state = pageData.properties['state'] as NotionApiState;
+  const group = pageData.properties['group'] as NotionApiGroup;
+  const createdDate = pageData.properties['Created Date'] as NotionApiDate;
+  const thumbnail = pageData.properties['Thumbnail'] as NotionThumbnail;
 
   return {
     title: name.title[0]?.plain_text,

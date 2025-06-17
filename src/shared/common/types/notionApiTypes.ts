@@ -2,11 +2,11 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export type PropertyValue = PageObjectResponse['properties'][string];
 
-type notionApiTitle = Extract<PropertyValue,{type:'title'}>;
-type notionApiTags = Extract<PropertyValue,{type:'multi_select'}>;
-type notionApiState = Extract<PropertyValue,{type:'status'}>;
-type notionApiGroup = Extract<PropertyValue,{type:'rich_text'}>;
-type notionApiDate = Extract<PropertyValue,{type:'date'}>;
-type notionThumbnail = Extract<PropertyValue,{type:'files'}>
+type NotionApiTitle = Extract<PropertyValue,{type:'title'}>;
+type NotionApiTags = Extract<PropertyValue,{type:'multi_select'}>;
+type NotionApiState = Extract<PropertyValue,{type:'status'}>;
+type NotionApiGroup = Extract<PropertyValue,{type:'rich_text'}>;
+type NotionApiDate = Extract<PropertyValue,{type:'date'}>;
+type NotionThumbnail = Extract<PropertyValue,{type:'files'}>
 
-export type {notionApiTitle,notionApiTags, notionApiState, notionApiGroup ,notionApiDate, notionThumbnail};
+export type {NotionApiTitle, NotionApiTags, NotionApiState, NotionApiGroup, NotionApiDate, NotionThumbnail};

@@ -1,6 +1,7 @@
-import { notion } from '@shared-server/instances/notionInstance';
-import { normalize } from '../../../../shared/common/utils/normalize';
+import { notion } from '@shared-server/notionInstances/notionInstance';
+
 import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import { normalize } from '@shared-common/utils';
 
 
 export async function GetPostList(){

@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { notion } from "@shared-server/instances/notionInstance";
+import { notion } from "@shared-server/notionInstances/notionInstance";
 
 type getParamType = {
   params:Promise<{page_id:string}>

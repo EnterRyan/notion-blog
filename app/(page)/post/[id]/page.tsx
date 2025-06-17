@@ -6,6 +6,7 @@ type PostPageProps = {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
+  console.log("PostPage in");
   const {id} = await params;
   return (
     <div>

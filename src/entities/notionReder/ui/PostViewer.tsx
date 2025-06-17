@@ -13,6 +13,7 @@ type PostViewerType = {
 }
 
 export default function PostViewer({recordMap}:PostViewerType){
+  console.log("PostViewer in");
   return (
     <NotionRenderer 
       recordMap={recordMap}
