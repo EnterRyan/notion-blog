@@ -6,8 +6,6 @@ import { SideNavigator } from '@widgets/sideNavigator';
 import './globals.css'
 import ReactQueryProvider from '@shared-client/providers/tanstackquery/ReactQueryProvider';
 
-export const runtime = 'nodejs';
-
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="ko">

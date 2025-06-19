@@ -5,10 +5,7 @@ type PostPageProps = {
   params: Promise<{ id: string }>
 }
 
-export const runtime = 'nodejs'; // 명시적으로 Node.js 런타임 설정
-
 export default async function PostPage({ params }: PostPageProps) {
-  console.log("PostPage in");
   const {id} = await params;
   return (
     <div>
