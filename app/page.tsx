@@ -4,18 +4,39 @@ import Link from "next/link";
 export default function Main(){
   return (
     <div className='grid-contents-layout h-full'>
-      <div className="area-post h-full">
-        {/*해당 카테고리 더보기 버튼 추가 */}
-        <PostListFetcher category="tech"/>
+      <div className="area-post">
+        <div className="section-header">
+          <h2 className="section-title">최신 포스트</h2>
+          <Link href="/posting/tech" className="section-more">
+            더보기 →
+          </Link>
+        </div>
+        <PostListFetcher category="tech" listType="card" />
       </div>
+
       <div className="area-project">
-        {/*해당 카테고리 더보기 버튼 추가 */}
-        there is Project Section
+        <div className="section-header">
+          <h2 className="section-title">프로젝트</h2>
+          <Link href="/posting/project" className="section-more">
+            더보기 →
+          </Link>
         </div>
-      <div className="area-study">
-        {/*해당 카테고리 더보기 버튼 추가 */}
-        there is Study Section
+        <div className="text-gray-600">
+          <PostListFetcher category="project" listType="row"/>
         </div>
+      </div>
+
+            <div className="area-study">
+        <div className="section-header">
+          <h2 className="section-title">학습 노트</h2>
+          <Link href="/posting/study" className="section-more">
+            더보기 →
+          </Link>
+        </div>
+        <div className="text-gray-600">
+          <PostListFetcher category="study" listType="row"/>
+        </div>
+      </div>
     </div>
   )
 }

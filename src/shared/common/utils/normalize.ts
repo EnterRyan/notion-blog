@@ -26,12 +26,18 @@ function extraData(pageData:PageObjectResponse):Post{
     group: group.rich_text[0]?.plain_text??'',
     createDate: createdDate.date?.start ?? '',
     pageId: pageData.id,
-    thumbnail :  thumbnail?.files?.[0]?.
-      type === 'file'
-      ? thumbnail.files[0].file.url
-      : thumbnail?.files?.[0]?.
-      type === 'external'
-      ? thumbnail.files[0].external.url
-      : '/defaultThumbnail.png',
+    thumbnail: resolveThumbnail(thumbnail),
   }
+}
+
+/**
+ * Thumbnail 필드를 안전하게 문자열 URL로 변환
+ */
+function resolveThumbnail(thumbnail?: NotionThumbnail): string {
+  const fileObj = thumbnail?.files?.[0]
+  if (!fileObj) return "/defaultThumbnail.png"
+
+  if (fileObj.type === "file") return fileObj.file.url
+  if (fileObj.type === "external") return fileObj.external.url
+  return "/defaultThumbnail.png"
 }

@@ -1,0 +1,1 @@
+export { default as PostRow } from "./ui/PostRow"
