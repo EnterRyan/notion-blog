@@ -8,7 +8,7 @@ type PostPageProps = {
 export default async function PostPage({ params }: PostPageProps) {
   const {id} = await params;
   return (
-    <div>
+    <div className="h-[90vh] min-h-0 flex flex-col">
       <ViewPostPage pageId={id} />
     </div>
   );

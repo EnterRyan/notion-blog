@@ -13,19 +13,21 @@ type PostViewerType = {
 }
 
 export default function PostViewer({recordMap}:PostViewerType){
-  console.log("PostViewer in");
   return (
-    <NotionRenderer 
-      recordMap={recordMap}
-      darkMode={false}
-      components={{
-        nextImage: Image,
-        Code: Code,
-        Collection: Collection,
-        Equation: Equation,
-      }}
-      disableHeader
-      fullPage={true}
-    />
+    <div className="overflow-y-auto h-full min-h-0">
+      <NotionRenderer 
+        recordMap={recordMap}
+        darkMode={false}
+        components={{
+          nextImage: Image,
+          Code: Code,
+          Collection: Collection,
+          Equation: Equation,
+        }}
+        disableHeader
+        fullPage={true}
+        />
+        <div>여기는 댓글 기능추가</div>
+    </div>
   )
 }

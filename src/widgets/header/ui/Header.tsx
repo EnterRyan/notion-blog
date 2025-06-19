@@ -8,7 +8,7 @@ export default function Header() {
     <header className="flex items-center justify-between h-16 px-6 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm">
       {/* 로고/타이틀 */}
       <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Changetodev's Blog</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Changetodev&apos;s Blog</h1>
       </div>
 
       {/* 네비게이션 버튼들 */}

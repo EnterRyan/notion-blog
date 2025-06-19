@@ -12,7 +12,6 @@ export async function GetPostList(category:string){
     page_size : 9,
     database_id : dataBaseId!,
   })
-  console.log(response.results);
   const postList = normalize(response.results as PageObjectResponse[]);
   return postList;
 }
