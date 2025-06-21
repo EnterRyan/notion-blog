@@ -8,7 +8,7 @@ export default function PostCard(post: Post) {
   const { pageId, title, group, createDate, tags, thumbnail } = post
   return (
     <Link href={`/post/${pageId}`} className="block group h-full">
-      <article className="bg-gray-100 dark:bg-gray-700  rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+      <article className="bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
         {/* 이미지 영역 */}
         <div className="relative w-full h-40 flex-shrink-0">
           <Image
@@ -39,7 +39,7 @@ export default function PostCard(post: Post) {
                 </div>
               ))}
               {tags.length > 6 && (
-                <span className="text-xs text-gray-500 whitespace-nowrap flex items-center px-1 flex-shrink-0">
+                <span className="text-xs text-gray-600 whitespace-nowrap flex items-center px-1 flex-shrink-0">
                   +{tags.length - 6}
                 </span>
               )}
@@ -47,7 +47,7 @@ export default function PostCard(post: Post) {
           </div>
 
           {/* 메타 정보 */}
-          <div className="flex justify-between text-xs text-gray-500 pt-2 border-t flex-shrink-0">
+          <div className="flex justify-between text-xs text-gray-600 pt-2 border-t flex-shrink-0">
             <span className="truncate mr-2">{group}</span>
             <time dateTime={createDate} className="flex-shrink-0">
               {createDate}

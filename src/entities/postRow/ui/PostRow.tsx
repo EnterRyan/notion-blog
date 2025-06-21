@@ -7,7 +7,7 @@ export default function PostRow(post: Post) {
 
   return (
     <Link href={`/post/${pageId}`} className="block group">
-      <article className=" bg-gray-100 dark:bg-gray-700 flex items-center justify-between py-3 px-4 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors border-b border-gray-100 last:border-b-0">
+      <article className="bg-white dark:bg-gray-700 flex items-center justify-between py-3 px-4 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors border-b border-gray-100 last:border-b-0">
         {/* 왼쪽: 제목과 태그 */}
         <div className="flex-1 min-w-0 mr-4">
           {/* 제목 */}
@@ -23,7 +23,7 @@ export default function PostRow(post: Post) {
             {state && state !== "완료" && (
               <span
                 className={`px-2 py-1 text-xs rounded-full flex-shrink-0 ${
-                  state === "진행 중" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"
+                  state === "진행 중" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-700"
                 }`}
               >
                 {state}
@@ -37,13 +37,13 @@ export default function PostRow(post: Post) {
                   <Tag tag={tag} />
                 </div>
               ))}
-              {tags.length > 3 && <span className="text-xs text-gray-400 flex items-center">+{tags.length - 3}</span>}
+              {tags.length > 3 && <span className="text-xs text-gray-500 flex items-center">+{tags.length - 3}</span>}
             </div>
           </div>
         </div>
 
         {/* 오른쪽: 그룹과 날짜 */}
-        <div className="flex items-center gap-4 text-sm text-gray-500 flex-shrink-0">
+        <div className="flex items-center gap-4 text-sm text-gray-600 flex-shrink-0">
           <span className="hidden sm:block">{group}</span>
           <time dateTime={createDate} className="whitespace-nowrap">
             {createDate}

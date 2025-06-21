@@ -39,7 +39,7 @@ type TagType = {
 export default function Tag({tag, isCategory = false}: TagType) {
   const normalizedTag = tag.toLowerCase().replace(/[\s-]/g, "");
   const colorMap = isCategory ? categoryColorMap : tagColorMap;
-  const bgClass = colorMap[normalizedTag] ?? "bg-gray-100 hover:bg-gray-200";
+  const bgClass = colorMap[normalizedTag] ?? "bg-gray-200 hover:bg-gray-300";
   
   return (
     <span className={`${bgClass} rounded-[5px] px-2 py-0.5 text-sm transition-colors duration-200`}>

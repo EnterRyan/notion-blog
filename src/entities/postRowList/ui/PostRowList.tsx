@@ -11,7 +11,7 @@ export default function PostRowList({ result, emptyMessage = "표시할 포스�
   if (!result || result.length === 0) {
     return (
       <div className="flex items-center justify-center h-20">
-        <p className="text-gray-500 text-sm">{emptyMessage}</p>
+        <p className="text-gray-600 text-sm">{emptyMessage}</p>
       </div>
     )
   }
@@ -20,8 +20,8 @@ export default function PostRowList({ result, emptyMessage = "표시할 포스�
     <div className="project-study-content">
       <div className="bg-white overflow-hidden h-full flex flex-col">
         {/* 테이블 헤더 */}
-        <div className="bg-gray-100 dark:bg-gray-900 px-4 py-2 border-b border-gray-200 flex-shrink-0">
-          <div className="flex items-center justify-between text-xs font-medium text-gray-600 uppercase tracking-wider">
+        <div className="bg-gray-50 dark:bg-gray-900 px-4 py-2 border-b border-gray-200 flex-shrink-0">
+          <div className="flex items-center justify-between text-xs font-medium text-gray-700 uppercase tracking-wider">
             <span>제목</span>
             <div className="flex items-center gap-4">
               <span className="hidden sm:block">분류</span>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Main(){
   return (
-    <div className='grid-contents-layout h-full'>
+    <div className='grid-contents-layout h-full '>
       <div className="area-post">
         <div className="section-header">
           <h2 className="section-title">최신 포스트</h2>
@@ -21,7 +21,7 @@ export default function Main(){
             더보기 →
           </Link>
         </div>
-        <div className="text-gray-600">
+        <div className="text-gray-700">
           <PostListFetcher category="project" listType="row"/>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function Main(){
             더보기 →
           </Link>
         </div>
-        <div className="text-gray-600">
+        <div className="text-gray-700">
           <PostListFetcher category="study" listType="row"/>
         </div>
       </div>
