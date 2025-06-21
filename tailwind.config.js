@@ -3,7 +3,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",         // Next.js App Router
     "./src/**/*.{js,ts,jsx,tsx,mdx}",         // FSD 구조 내부 전부
   ],
-  darkMode : 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
       fontFamily: {

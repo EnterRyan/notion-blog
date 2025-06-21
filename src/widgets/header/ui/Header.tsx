@@ -1,18 +1,9 @@
 'use client'
 import { useDarkMode } from "@shared-client/providers/darkmode"
 import { Github, User, Moon, Sun } from "lucide-react"
-import { useEffect, useState } from "react";
 
 export default function Header() {
   const { isDarkMode, toggle } = useDarkMode();
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  // ✅ 마운트 전에는 렌더링하지 않음
-  if (!isMounted) return null
 
   return (
     <header

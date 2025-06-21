@@ -11,9 +11,9 @@ export default function useDarkModeHook() {
     setIsDarkMode(nextMode);
     localStorage.setItem("isDarkMode", nextMode.toString());
     if (nextMode) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.setAttribute('data-theme',"dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.setAttribute('data-theme',"light");
     }
     console.log(isDarkMode);
   };
@@ -23,9 +23,9 @@ export default function useDarkModeHook() {
     const darkMode = store === "true";
     setIsDarkMode(darkMode);
     if (darkMode) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.setAttribute('data-theme',"dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.setAttribute('data-theme',"light");
     }
   }, []);
 
