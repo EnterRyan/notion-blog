@@ -14,7 +14,7 @@ export default function Header() {
     >
       {/* 로고/타이틀 */}
       <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Changetodev&apos;s Blog</h1>
+        <h1 className="text-2xl font-bold hover:text-blue-600 dark:hover:text-blue-400 text-gray-900 dark:text-white tracking-tight">Changetodev&apos;s Blog</h1>
       </div>
 
       {/* 네비게이션 버튼들 */}

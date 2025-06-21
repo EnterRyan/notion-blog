@@ -7,7 +7,7 @@ export default function PostRow(post: Post) {
 
   return (
     <Link href={`/post/${pageId}`} className="block group">
-      <div className="flex items-center justify-between py-3 px-4 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0">
+      <article className=" bg-gray-100 dark:bg-gray-700 flex items-center justify-between py-3 px-4 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors border-b border-gray-100 last:border-b-0">
         {/* 왼쪽: 제목과 태그 */}
         <div className="flex-1 min-w-0 mr-4">
           {/* 제목 */}
@@ -49,7 +49,7 @@ export default function PostRow(post: Post) {
             {createDate}
           </time>
         </div>
-      </div>
+      </article>
     </Link>
   )
 }

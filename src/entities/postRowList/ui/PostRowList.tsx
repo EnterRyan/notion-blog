@@ -18,9 +18,9 @@ export default function PostRowList({ result, emptyMessage = "표시할 포스�
 
   return (
     <div className="project-study-content">
-      <div className="bg-white rounded-lg overflow-hidden h-full flex flex-col">
+      <div className="bg-white overflow-hidden h-full flex flex-col">
         {/* 테이블 헤더 */}
-        <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex-shrink-0">
+        <div className="bg-gray-100 dark:bg-gray-900 px-4 py-2 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center justify-between text-xs font-medium text-gray-600 uppercase tracking-wider">
             <span>제목</span>
             <div className="flex items-center gap-4">

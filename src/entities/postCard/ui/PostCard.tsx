@@ -8,7 +8,7 @@ export default function PostCard(post: Post) {
   const { pageId, title, group, createDate, tags, thumbnail } = post
   return (
     <Link href={`/post/${pageId}`} className="block group h-full">
-      <article className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+      <article className="bg-gray-100 dark:bg-gray-700  rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
         {/* 이미지 영역 */}
         <div className="relative w-full h-40 flex-shrink-0">
           <Image

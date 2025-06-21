@@ -17,13 +17,15 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="ko">
-      <body className="grid-layout-main">
+      <body>
         <ReactQueryProvider>
           <DarkModeProvider>
-          <div className="area-header"><Header /></div>
-          <div className="area-side"><SideNavigator /></div>
-          <main className="area-contents">{children}</main>
-          <footer className="area-footer"><Footer /></footer>
+            <div className="grid-layout-main">
+            <div className="area-header"><Header /></div>
+            <div className="area-side"><SideNavigator /></div>
+            <main className="area-contents">{children}</main>
+            <footer className="area-footer"><Footer /></footer>
+          </div>
           </DarkModeProvider>
         </ReactQueryProvider>
       </body>
