@@ -6,6 +6,7 @@ import { SideNavigator } from '@widgets/sideNavigator';
 
 import './globals.css'
 import ReactQueryProvider from '@shared-client/providers/tanstackquery/ReactQueryProvider';
+import { DarkModeProvider } from "@shared-client/providers/darkmode";
 
 export const metadata: Metadata = {
   title: "changetodev blog",
@@ -18,10 +19,12 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
     <html lang="ko">
       <body className="grid-layout-main">
         <ReactQueryProvider>
+          <DarkModeProvider>
           <div className="area-header"><Header /></div>
           <div className="area-side"><SideNavigator /></div>
           <main className="area-contents">{children}</main>
           <footer className="area-footer"><Footer /></footer>
+          </DarkModeProvider>
         </ReactQueryProvider>
       </body>
     </html>

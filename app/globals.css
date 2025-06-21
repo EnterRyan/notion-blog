@@ -1,18 +1,14 @@
 @import "tailwindcss";
 
-/* 테마설정 */
-body {
-  @apply bg-gray-200 text-black transition-colors duration-300;
-}
-
-html.dark body {
-  @apply bg-gray-900 text-white;
-}
-
 @layer base {
   * {
     box-sizing: border-box;
   }
+  html, body {
+    color-scheme: light !important; /* Safari 포함 모든 브라우저 강제 */
+    background-color: white !important; /* 기본 배경 보장 */
+  }
+  
 }
 
 @layer utilities {
@@ -272,7 +268,16 @@ html.dark body {
   }
 }
 
-/* 다크모드 지원 */
+/* 테마설정 */
+/* body {
+  @apply bg-gray-200 text-black transition-colors duration-300;
+}
+
+html.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+
 html.dark .area-post,
 html.dark .area-project,
 html.dark .area-study {
@@ -286,3 +291,7 @@ html.dark .section-title {
 html.dark .section-more {
   @apply text-blue-400 hover:text-blue-300;
 }
+
+html.dark header{
+  @apply bg-gray-900 text-white
+} */
