@@ -5,6 +5,9 @@ Notion DB를 Headless CMS처럼 활용하며, SSR과 CSR을 적절히 혼합한 
 
 아키텍처는 FSD(Feature-Sliced Design) 패턴을 따르며, 클라이언트 전역 상태 관리는 Zustand를 사용합니다.
 
+vercel 배포 링크
+https://notion-blog-woad-tau.vercel.app/
+
 ---
 
 ## 📌 주요 기능
@@ -101,15 +104,6 @@ Notion DB를 Headless CMS처럼 활용하며, SSR과 CSR을 적절히 혼합한 
 
 ---
 
-## 🚀 (2025.06.16)개발 계획 (TODO)
-
-- [ ] 메인 페이지 SSR 컴포넌트가 사용할 notionApi 가져오기 함수 구현(CSR에서도 재사용가능하게 모듈화)
-- [ ] 메인 페이지 레이아웃 전체 구성
-- [ ] PostCard 스타일 개선
-- [ ] 메인 페이지에서 이동할 라우팅 구현
-
----
-
 # 1. 의존성 설치
 yarn install
 
@@ -118,9 +112,11 @@ yarn install
 - yarn storybook
 
 # 3. 환경 변수 설정 (.env.local)
-NOTION_TOKEN=your_notion_token
-DATABASE_ID_TECH=xxx
-DATABASE_ID_EDU=xxx
+NOTION_API_KET=your_notion_token
+
+NOTION_TECHDB_ID=XXX
+NOTION_PROJECTDB_ID=XXX
+NOTION_EDUCATIONDB_ID=xxx
 ...
 
 last update : 2025.06.16

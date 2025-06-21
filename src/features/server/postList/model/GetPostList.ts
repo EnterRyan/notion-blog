@@ -9,7 +9,7 @@ export async function GetPostList(category:string){
   if (!dataBaseId) throw new Error('데이터베이스 ID가 없습니다');
 
   const response:QueryDatabaseResponse = await notion.databases.query({
-    page_size : 9,
+    // page_size : 9,
     database_id : dataBaseId!,
   })
   const postList = normalize(response.results as PageObjectResponse[]);
