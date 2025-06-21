@@ -52,7 +52,6 @@
   }
   .area-contents {
     grid-area: contents;
-    padding: 1rem;
     overflow: hidden;
     min-height: 0;
   }
@@ -102,6 +101,7 @@
   .area-project {
     grid-area: project;
     padding: 0;
+    margin-bottom: 1rem;
     background: white;
     border : 1px solid #ccc;
     border-radius: 0.5rem;
@@ -115,6 +115,7 @@
   .area-study {
     grid-area: study;
     padding: 0;
+    margin-bottom: 1rem;
     background: white;
     border : 1px solid #ccc;
     border-radius: 0.5rem;
