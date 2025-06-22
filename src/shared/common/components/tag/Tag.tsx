@@ -8,12 +8,15 @@ const tagColorMap: {[key: string]: string} = {
   // 기술 블로깅 관련 태그
   react: 'bg-sky-400 hover:bg-sky-500',
   javascript: 'bg-yellow-400 hover:bg-yellow-500',
+  js:'bg-yellow-400 hover:bg-yellow-500',
   typescript: 'bg-blue-600 hover:bg-blue-700',
+  ts: 'bg-blue-600 hover:bg-blue-700',
   next: 'bg-black hover:bg-gray-800 text-white',
   tailwindcss: 'bg-sky-500 hover:bg-sky-600',
   html5: 'bg-orange-500 hover:bg-orange-600',
   css3: 'bg-blue-500 hover:bg-blue-600',
   frontend: 'bg-green-500 hover:bg-green-600',
+  fe: 'bg-green-500 hover:bg-green-600',
   
   // 교육/학습 관련 태그
   강의: 'bg-purple-400 hover:bg-purple-500',

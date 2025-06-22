@@ -7,8 +7,6 @@ type PostingPageProps = {
 export default async function PostListPage({params}:PostingPageProps){
   const {category} = await params;
   return(
-    <div>
-      <PostListFetcher category={category}/>
-    </div>
+    <PostListFetcher category={category}/>
   )
 }

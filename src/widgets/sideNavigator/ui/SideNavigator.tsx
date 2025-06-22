@@ -1,7 +1,7 @@
+import TagSummary from '@features-server/tagSummary/ui/TagSummary';
 import Avatar from './Avatar';
-import TagSummary from './TagSummary';
 
-export default function SideNavigator(){
+export default async function SideNavigator(){
   return(
     <nav className='w-[250px] h-full m-3'>
       <div className="w-full flex flex-col items-center gap-4">
@@ -14,11 +14,7 @@ export default function SideNavigator(){
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <TagSummary tags={[
-          { name: 'React', count: 2 },
-          { name: 'Next', count: 1 },
-          { name: 'TypeScript', count: 10 },
-        ]} />
+        <TagSummary />
       </div>
     </nav>
   ) 
