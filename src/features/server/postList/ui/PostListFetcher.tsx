@@ -1,5 +1,5 @@
 import { PostRowList } from "@entities/postRowList";
-import { GetPostList } from "../model/GetPostList";
+import { GetPostList } from "../../../../shared/server/getPostList/GetPostList";
 import PostListBox from "@entities/postList/ui/PostListBox";
 
 type PostListFetcherProps = {

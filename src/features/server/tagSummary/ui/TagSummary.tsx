@@ -1,5 +1,5 @@
 import TagSumList from '@entities/tagSumList/ui/TagSumList';
-import { GetPostList } from '@features-server/postList/model/GetPostList';
+import { GetPostList } from '@shared-server/getPostList/GetPostList';
 import accumulateTag from '../model/accumulateTag';
 
 export default async function TagSummary(){

@@ -1,0 +1,18 @@
+import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+
+import { notion } from '@shared-server/notionInstances/notionInstance';
+import { normalize } from '@shared-common/utils/notionData';
+import { selectDbId } from './util/selectDbId';
+
+
+// 기본으로 카테고리에 해당하는 모든 Post들을 가져오는 함수.
+export async function GetPostList(category:string){
+  const dataBaseId = selectDbId(category);
+  if (!dataBaseId) throw new Error('데이터베이스 ID가 없습니다');
+
+  const response:QueryDatabaseResponse = await notion.databases.query({
+    database_id : dataBaseId!,
+  })
+  const postList = normalize(response.results as PageObjectResponse[]);
+  return postList;
+}

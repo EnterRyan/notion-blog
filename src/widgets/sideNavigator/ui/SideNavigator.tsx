@@ -1,5 +1,6 @@
-import TagSummary from '@features-server/tagSummary/ui/TagSummary';
 import Avatar from './Avatar';
+import TagSummary from '@features-server/tagSummary/ui/TagSummary';
+import SearchForm from '@shared-common/components/searchForm/ui/searchForm';
 
 export default async function SideNavigator(){
   return(
@@ -12,9 +13,10 @@ export default async function SideNavigator(){
             프론트엔드 개발자 <b>김태헌</b>입니다.<br/>기술 포스팅, 개인 프로젝트, 학습내용 과 잡담을 올리고 있는 블로그입니다.
           </p>
         </div>
-      </div>
-      <div className="flex flex-col w-full">
-        <TagSummary />
+        <SearchForm />
+        <div className="flex flex-col w-full">
+          <TagSummary />
+        </div>
       </div>
     </nav>
   ) 
