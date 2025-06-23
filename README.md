@@ -22,7 +22,7 @@ https://notion-blog-woad-tau.vercel.app/
 #### 📄 공통 DB 필드
 - `Name`, `Group`, `Tags`, `Created Date`, `State`, `Thumbnail`
 
-### 📊 통계 페이지 컨탠츠
+### 📊 통계 페이지 컨탠츠(구현예정)
 - 태그 분포 → 원형 그래프로 시각화
 - 날짜별 글 작성 → GitHub 잔디 스타일 시각화
 - 카테고리별 포스팅 수 → 막대 그래프 등으로 표현 예정
@@ -36,7 +36,7 @@ https://notion-blog-woad-tau.vercel.app/
 
 #### Side Navigation
 - 소개 문구 박스
-- 검색창 (URL 쿼리로 검색어 전달)
+- 검색창 (URL 쿼리로 검색어 전달) + fuse.js로 검색결과 필터링
 - 태그별 포스트 수 리스트
 
 ### `/` 메인 페이지
@@ -79,6 +79,7 @@ https://notion-blog-woad-tau.vercel.app/
 - TanStack Query
 - notion-render-x
 - zustand
+- fuse.js
 - (예정) Chart.js or Recharts
 
 ---

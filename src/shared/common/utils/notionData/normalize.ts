@@ -1,6 +1,6 @@
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
-import { NotionApiDate, NotionApiGroup, NotionApiState, NotionApiTags, NotionApiTitle, NotionThumbnail } from '../types/notionApiTypes';
+import { NotionApiDate, NotionApiGroup, NotionApiState, NotionApiTags, NotionApiTitle, NotionThumbnail } from '@shared-common/types/notionApiTypes';
 import { Post, PostList } from '@shared-common/types';
 
 export function normalize(postList:PageObjectResponse[]):PostList{

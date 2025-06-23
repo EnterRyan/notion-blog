@@ -3,7 +3,8 @@ import { NextResponse } from 'next/server';
 
 import { notion } from '@shared-server/notionInstances/notionInstance';
 import { PageObjectResponse, QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
-import { normalize } from 'src/shared/common/utils/normalize';
+import { normalize } from '@shared-common/utils/notionData';
+
 
 export async function GET(){
   const dataBaseId = process.env.NOTION_DB_ID;
