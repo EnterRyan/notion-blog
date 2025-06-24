@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/next"
 
 import { Header } from '@widgets/header';
 import { Footer } from '@widgets/footer';
