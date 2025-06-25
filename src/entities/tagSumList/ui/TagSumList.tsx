@@ -1,6 +1,7 @@
 'use client'
 import { Tag } from "@shared-common/components/tag"
-import { tagMap } from "@shared-common/utils/dataMap/tagMap";
+import { tagMap } from "@shared-common/utils/dataMap/dataMap/tagMap";
+
 import { useRouter } from "next/navigation";
 
 type TagSumListType = {

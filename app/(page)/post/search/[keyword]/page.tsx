@@ -1,6 +1,7 @@
 import Fuse from "fuse.js";
 import getAllPostList from "@shared-server/getPostList/getAllPostList";
 import { PostListBox } from "@entities/postList";
+import keywordSearch from "@shared-common/utils/dataMap/keywordSearch";
 
 type SearchPostType = {params:Promise<{keyword:string}>}
 export default async function SearchPost({params}:SearchPostType){
@@ -8,12 +9,7 @@ export default async function SearchPost({params}:SearchPostType){
   const decodedKeyword = decodeURIComponent(keyword)
   const totalData = await getAllPostList();
 
-  const fuse = new Fuse(totalData,{
-    keys:['title', 'tags'],
-    threshold: 0.3,
-  })
-  const result = fuse.search(decodedKeyword);
-  const postList = result.map(r => r.item);
+  const postList = keywordSearch(totalData, decodedKeyword);
   return (
     <PostListBox result={postList}/>
   )
