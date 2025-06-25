@@ -1,4 +1,3 @@
-import Fuse from "fuse.js";
 import getAllPostList from "@shared-server/getPostList/getAllPostList";
 import { PostListBox } from "@entities/postList";
 import keywordSearch from "@shared-common/utils/dataMap/keywordSearch";
