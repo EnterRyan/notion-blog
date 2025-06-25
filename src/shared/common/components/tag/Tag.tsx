@@ -45,7 +45,10 @@ export default function Tag({tag, isCategory = false}: TagType) {
   const bgClass = colorMap[normalizedTag] ?? "bg-gray-200 hover:bg-gray-300";
   
   return (
-    <span className={`${bgClass} rounded-[5px] px-2 py-0.5 text-sm transition-colors duration-200`}>
+    <span 
+    className={`${bgClass} 
+    rounded-[5px] px-2 py-0.5 text-sm 
+    transition-colors duration-200`}>
       {tag}
     </span>
   )

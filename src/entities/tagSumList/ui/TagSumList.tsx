@@ -20,7 +20,10 @@ export default function TagSumList({tagsCount}:TagSumListType){
         <div 
         key={tag}
         onClick={()=>handleTagClick(tag)}
-        className="flex flex-row items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2 py-1 shadow-sm max-w-full">
+        className="flex flex-row items-center 
+        rounded-full bg-gray-100 dark:bg-gray-700
+        px-2 py-1 shadow-sm max-w-full
+        hover:cursor-pointer">
           <Tag tag={tag} />
           <span className="ml-1 bg-blue-500 text-white rounded-full px-2 py-0.5 text-xs font-bold">{count>50?'50+':count}</span>
         </div>
