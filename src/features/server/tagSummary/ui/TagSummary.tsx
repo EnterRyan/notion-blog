@@ -1,5 +1,4 @@
 import TagSumList from '@entities/tagSumList/ui/TagSumList';
-import { GetPostList } from '@shared-server/getPostList/GetPostList';
 import accumulateTag from '../model/accumulateTag';
 import getAllPostList from '@shared-server/getPostList/getAllPostList';
 
