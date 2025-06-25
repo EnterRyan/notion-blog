@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Main(){
   return (
     <div className='grid-contents-layout h-full '>
-      <div className="area-post">
+      <article className="area-post">
         <div className="section-header">
           <h2 className="section-title">최신 포스트</h2>
           <Link href="/posting/tech" className="section-more">
@@ -12,9 +12,9 @@ export default function Main(){
           </Link>
         </div>
         <PostListFetcher category="tech" listType="card" />
-      </div>
+      </article>
 
-      <div className="area-project">
+      <article className="area-project">
         <div className="section-header">
           <h2 className="section-title">프로젝트</h2>
           <Link href="/posting/project" className="section-more">
@@ -24,9 +24,9 @@ export default function Main(){
         <div className="text-gray-700">
           <PostListFetcher category="project" listType="row"/>
         </div>
-      </div>
+      </article>
 
-            <div className="area-study">
+      <article className="area-study">
         <div className="section-header">
           <h2 className="section-title">학습 노트</h2>
           <Link href="/posting/study" className="section-more">
@@ -36,7 +36,7 @@ export default function Main(){
         <div className="text-gray-700">
           <PostListFetcher category="study" listType="row"/>
         </div>
-      </div>
+      </article>
     </div>
   )
 }

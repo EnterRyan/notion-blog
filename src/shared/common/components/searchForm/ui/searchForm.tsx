@@ -1,16 +1,24 @@
 'use client'
+import sanitizeIntput from '@shared-common/utils/sanitizeInput/sanitize';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useState } from 'react';
 
 export default function SearchForm() {
   const router = useRouter();
   const [value, setValue] = useState('');
+  const [warning,setWarning] = useState(false);
+
   const handleSearchEvent = (event:FormEvent<HTMLFormElement> )=>{
     event.preventDefault();
-    const trimmed = value.trim()
-    if (!trimmed) return
-
-    router.push(`/post/search/${encodeURIComponent(trimmed)}`)
+    const safeValue = sanitizeIntput(value);
+    if (!safeValue) {
+      setWarning(prev => !prev)
+      return
+    }
+    else{
+      router.push(`/post/search/${encodeURIComponent(safeValue)}`)
+      if(warning) setWarning(false);
+    }
 
   }
   return (
@@ -56,6 +64,7 @@ export default function SearchForm() {
             )}
           </div>
         </form>
+        {warning && <p className="text-red-500 text-xs mt-1">검색할 수 없는 단어입니다.</p>}
       </div>
     </div>
   );

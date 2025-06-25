@@ -30,7 +30,7 @@ const tagColorMap: {[key: string]: string} = {
   일상: 'bg-lime-400 hover:bg-lime-500',
   
   // 공통 태그
-  notionapi: 'bg-gray-400 hover:bg-gray-500',
+  notionapi: 'bg-sky-500 hover:bg-sky-600',
   fsd: 'bg-amber-700 hover:bg-amber-800',
 }
 

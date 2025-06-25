@@ -1,14 +1,10 @@
 import TagSumList from '@entities/tagSumList/ui/TagSumList';
 import { GetPostList } from '@shared-server/getPostList/GetPostList';
 import accumulateTag from '../model/accumulateTag';
+import getAllPostList from '@shared-server/getPostList/getAllPostList';
 
 export default async function TagSummary(){
-  const tags= (await Promise.all([
-    GetPostList("tech"),
-    GetPostList("study"),
-    GetPostList("project"),
-  ])).flat();
-
+  const tags = (await getAllPostList()).flat();
   const tagSum = accumulateTag(tags);
 
   return <TagSumList tagsCount={tagSum}/>
