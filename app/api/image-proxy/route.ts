@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
         'Cache-Control': 'public, max-age=86400', // 캐시 하루
       },
     })
-  } catch (e) {
+  } catch {
     return new NextResponse('Failed to fetch image', { status: 500 })
   }
 }
