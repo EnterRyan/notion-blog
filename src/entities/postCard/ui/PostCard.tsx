@@ -1,24 +1,24 @@
 import Link from "next/link";
-import Image from 'next/image';
 
 import { Post } from "@shared-common/types";
 import { Tag } from "@shared-common/components/tag";
 
 export default function PostCard(post: Post) {
   const { pageId, title, group, createDate, tags, thumbnail } = post
+  console.log(thumbnail);
+  const imgSrc = thumbnail ?`/api/image-proxy?url=${encodeURIComponent(thumbnail)}` :'/defaultThumbnail.png'
   return (
     <Link href={`/post/${pageId}`} className="block group h-full">
       <article className="border border-gray-300 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
         {/* 이미지 영역 */}
-        <div className="relative w-full h-40 flex-shrink-0">
-          <Image
-            src={thumbnail || "/placeholder.svg?height=200&width=400"}
+        <div className="relative w-full h-40 flex-shrink-0 overflow-hidden">
+          <img
+            src={imgSrc}
             alt={`${title} 썸네일`}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform"
           />
         </div>
+
 
         {/* 콘텐츠 영역 */}
         <div className="p-3 flex flex-col">

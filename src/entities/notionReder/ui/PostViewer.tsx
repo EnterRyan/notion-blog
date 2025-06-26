@@ -22,7 +22,7 @@ export default function PostViewer({recordMap}:PostViewerType){
         recordMap={recordMap}
         darkMode={isDarkMode as boolean}
         components={{
-          nextImage: Image,
+          Image:Image,
           Code: Code,
           Collection: Collection,
           Equation: Equation,

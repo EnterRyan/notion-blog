@@ -35,9 +35,9 @@ function extraData(pageData:PageObjectResponse):Post{
  */
 function resolveThumbnail(thumbnail?: NotionThumbnail): string {
   const fileObj = thumbnail?.files?.[0]
-  if (!fileObj) return "/defaultThumbnail.png"
 
+  if (!fileObj) return ""
   if (fileObj.type === "file") return fileObj.file.url
   if (fileObj.type === "external") return fileObj.external.url
-  return "/defaultThumbnail.png"
+  return "";
 }
