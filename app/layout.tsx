@@ -11,7 +11,7 @@ import { DarkModeProvider } from "@shared-client/providers/darkmode";
 
 export const metadata: Metadata = {
   title: "changetodev blog",
-  description: "프론트엔드 학습 및 잡담 블로그입니다.",
+  description: "프론트엔드 기술, 학습 및 개인 이야기용 블로그입니다.",
 }
 
 
