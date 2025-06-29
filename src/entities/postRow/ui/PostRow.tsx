@@ -43,7 +43,7 @@ export default function PostRow(post: Post) {
         </div>
 
         {/* 오른쪽: 그룹과 날짜 */}
-        <div className="flex items-center gap-4 text-sm text-gray-600 flex-shrink-0">
+        <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-white flex-shrink-0">
           <span className="hidden sm:block">{group}</span>
           <time dateTime={createDate} className="whitespace-nowrap">
             {createDate}

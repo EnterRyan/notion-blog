@@ -24,6 +24,9 @@
     @apply bg-white dark:bg-gray-800
   }
 
+  /* *{
+    @apply text-black dark:text-white
+  } */
 }
 
 @layer utilities {

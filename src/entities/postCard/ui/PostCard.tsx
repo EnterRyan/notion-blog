@@ -46,7 +46,7 @@ export default function PostCard(post: Post) {
           </div>
 
           {/* 메타 정보 */}
-          <div className="flex justify-between text-xs text-gray-600 pt-2 border-t flex-shrink-0">
+          <div className="flex justify-between text-xs text-gray-600 dark:text-white pt-2 border-t flex-shrink-0">
             <span className="truncate mr-2">{group}</span>
             <time dateTime={createDate} className="flex-shrink-0">
               {createDate}

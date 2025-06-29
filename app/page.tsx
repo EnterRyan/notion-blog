@@ -21,7 +21,7 @@ export default function Main(){
             더보기 →
           </Link>
         </div>
-        <div className="text-gray-700">
+        <div className="text-gray-700 h-full">
           <PostListFetcher category="project" listType="row"/>
         </div>
       </article>
@@ -33,7 +33,7 @@ export default function Main(){
             더보기 →
           </Link>
         </div>
-        <div className="text-gray-700">
+        <div className="text-gray-700 h-full">
           <PostListFetcher category="study" listType="row"/>
         </div>
       </article>
