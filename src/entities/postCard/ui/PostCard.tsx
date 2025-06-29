@@ -5,8 +5,7 @@ import { Tag } from "@shared-common/components/tag";
 
 export default function PostCard(post: Post) {
   const { pageId, title, group, createDate, tags, thumbnail } = post
-  console.log(thumbnail);
-  const imgSrc = thumbnail ?`/api/image-proxy?url=${encodeURIComponent(thumbnail)}` :'/defaultThumbnail.png'
+  const imgSrc = thumbnail ? thumbnail :'/defaultThumbnail.png'
   return (
     <Link href={`/post/${pageId}`} className="block group h-full">
       <article className="border border-gray-300 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">

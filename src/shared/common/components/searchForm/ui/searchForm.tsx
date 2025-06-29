@@ -16,7 +16,7 @@ export default function SearchForm() {
       return
     }
     else{
-      router.push(`/post/search/${encodeURIComponent(safeValue)}`)
+      router.push(`/posting/search/${encodeURIComponent(safeValue)}`)
       if(warning) setWarning(false);
     }
 

@@ -11,7 +11,7 @@ export default function TagSumList({tagsCount}:TagSumListType){
   const router = useRouter();
   const handleTagClick =(tag:string)=>{
     const reducingTag = tagMap[tag]||tag;
-    router.push(`/post/search/${encodeURIComponent(reducingTag)}`)
+    router.push(`/posting/search/${encodeURIComponent(reducingTag)}`)
   }
   return (
     <div className="w-full p-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow">
