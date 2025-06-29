@@ -17,7 +17,7 @@ export default function PostViewer({recordMap}:PostViewerType){
   const {isDarkMode} = useDarkMode();
   if (!recordMap) return <div>Loading...</div>;
   return (
-    <div className="overflow-y-auto h-full min-h-0">
+    <div className="overflow-y-auto">
       <NotionRenderer 
         recordMap={recordMap}
         darkMode={isDarkMode as boolean}
@@ -30,7 +30,6 @@ export default function PostViewer({recordMap}:PostViewerType){
         disableHeader
         fullPage={true}
         />
-        <div>여기는 댓글 기능추가</div>
     </div>
   )
 }

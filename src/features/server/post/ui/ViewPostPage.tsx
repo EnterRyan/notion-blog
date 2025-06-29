@@ -13,6 +13,9 @@ export default async function ViewPostPage({ pageId }: { pageId: string }){
     )
   }
   return(
-    <PostViewer recordMap={recordMap}/>
+    <div className="h-full overflow-y-scroll">
+      <PostViewer recordMap={recordMap}/>
+      {/* <div>여기는 댓글 기능추가</div> */}
+    </div>
   )
 }
