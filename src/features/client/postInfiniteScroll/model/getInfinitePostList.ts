@@ -5,8 +5,12 @@ export async function getInfinitePostList(
   pageSize:number,
   cursor?:string
   ){
-  const baseUrl = `/api/postList?category=${category}&pageSize=${pageSize}&cursor=${cursor}`;
-
+  // 쿼리파라미터로 undefined 보내기  
+  const baseUrl = new URL( `/api/postsList`, window.location.origin);
+  baseUrl.searchParams.set("category", category);
+  baseUrl.searchParams.set("pageSize", pageSize.toString());
+  if (cursor) { baseUrl.searchParams.set("cursor", cursor);}
+  
   const res = await fetch(baseUrl);
   if (!res.ok) throw new Error('에러 발생!');
   const data =await res.json();

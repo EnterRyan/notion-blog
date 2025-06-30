@@ -8,7 +8,7 @@ import { GetPostListResult } from '@shared-common/types';
 
 // 기본으로 카테고리에 해당하는 모든 Post들을 가져오는 함수.
 export async function GetPostList
-(category:string, pageSize:number=6, startCursor?: string):Promise<GetPostListResult>{
+(category:string, pageSize:number=6, startCursor?: string|undefined):Promise<GetPostListResult>{
   const dataBaseId = selectDbId(category);
   if (!dataBaseId) throw new Error('데이터베이스 ID가 없습니다');
 

@@ -1,5 +1,4 @@
-import { PostListFetcher } from "@features-server/postList";
-
+import { InfiniteScrollPostCard } from "@features-client/postInfiniteScroll";
 type PostingPageProps = {
   params: Promise<{ category: string }>
 }
@@ -7,6 +6,6 @@ type PostingPageProps = {
 export default async function PostListPage({params}:PostingPageProps){
   const {category} = await params;
   return(
-    <PostListFetcher category={category}/>
+    <InfiniteScrollPostCard category={category}/>
   )
 }

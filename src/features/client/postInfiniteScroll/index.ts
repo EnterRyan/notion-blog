@@ -1,0 +1,1 @@
+export {default as InfiniteScrollPostCard} from './ui/infiniteScrollPostCard'
