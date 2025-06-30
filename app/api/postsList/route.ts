@@ -1,4 +1,4 @@
-import {getAllPostList , GetPostList } from "@shared-server/getPostList";
+import { GetPostList } from "@shared-server/getPostList";
 import { NextRequest, NextResponse } from "next/server";
 
 
