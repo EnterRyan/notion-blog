@@ -15,10 +15,13 @@ export async function GET(req: NextRequest){
     const safeCategory = category as Category;
 
     // 팁: parseInt는 명시적으로 10진수로 인식하라고 선언 해야함 ,10
-    const {postList, nextCursor, hasMore} = GetPostList(safeCategory, pageSize, startCursor);
-
+    const {postList, nextCursor, hasMore} = await GetPostList(safeCategory, pageSize, startCursor);
+    
     return NextResponse.json(
-      { postList, nextCursor, hasMore},
+      { postList, 
+        nextCursor,
+        hasMore
+      },
       {status:200}
 
     )
