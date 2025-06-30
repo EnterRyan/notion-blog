@@ -10,3 +10,9 @@ export type Post = {
 }
 
 export type PostList = Post[];
+
+export type GetPostListResult = {
+  postList : PostList,
+  nextCursor : string|null,
+  hasMore: boolean;
+}
