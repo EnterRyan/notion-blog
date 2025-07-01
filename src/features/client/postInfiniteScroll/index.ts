@@ -1,1 +1,1 @@
-export {default as InfiniteScrollPostCard} from './ui/infiniteScrollPostCard'
+export {default as InfiniteScrollPostCardBox} from './ui/InfiniteScrollPostCardBox'

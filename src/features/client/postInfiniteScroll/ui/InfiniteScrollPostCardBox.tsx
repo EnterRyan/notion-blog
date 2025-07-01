@@ -9,7 +9,7 @@ import { getInfinitePostList } from "../model/getInfinitePostList";
 
 const PAGE_SIZE = 6;
 type InfiniteScrollPostCardType = {category : string;}
-export default function InfiniteScrollPostCard({category}:InfiniteScrollPostCardType){
+export default function InfiniteScrollPostCardBox({category}:InfiniteScrollPostCardType){
   //인식이 되면 쿼리가 콜될 div 지정
   const observerRef = useRef<HTMLDivElement | null>(null);
   const {
