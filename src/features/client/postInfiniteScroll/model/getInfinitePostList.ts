@@ -1,3 +1,10 @@
+/**
+ * 무한 스크롤 포스트 목록 조회
+ * @param category 카테고리
+ * @param pageSize 페이지 사이즈
+ * @param cursor 커서
+ * @returns 포스트 목록, 다음 커서, 더 있는지 여부
+ */
 export async function getInfinitePostList(
   category:string, 
   pageSize:number,
