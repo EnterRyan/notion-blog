@@ -35,7 +35,7 @@ export default function Header() {
         hover:text-blue-600 dark:hover:text-blue-400 
         hover:bg-gray-50 dark:hover:bg-gray-800 
         rounded-lg transition-all duration-200"
-        onClick={()=>handleExternalClick("https://enterryan.github.io/tagDev/")}>
+        onClick={()=>handleExternalClick("https://kimtaehun-dev.github.io/tagDev/")}>
           <User className="w-4 h-4" />
           <span className="hidden sm:inline">Introduce</span>
         </button>
@@ -47,7 +47,7 @@ export default function Header() {
         hover:text-gray-900 dark:hover:text-white 
         hover:bg-gray-50 dark:hover:bg-gray-800 
         rounded-lg transition-all duration-200"
-        onClick={()=>handleExternalClick('https://github.com/EnterRyan')}>
+        onClick={()=>handleExternalClick('https://github.com/kimtaehun-dev')}>
           <Github className="w-4 h-4" />
           <span className="hidden sm:inline">GitHub</span>
         </button>

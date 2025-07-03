@@ -9,7 +9,7 @@ import { getInfinitePostList } from "../model/getInfinitePostList";
 
 const PAGE_SIZE = 6;
 type InfiniteScrollPostCardType = {category : string;}
-export default function InfiniteScrollPostCard({category}:InfiniteScrollPostCardType){
+export default function InfiniteScrollPostCardBox({category}:InfiniteScrollPostCardType){
   //인식이 되면 쿼리가 콜될 div 지정
   const observerRef = useRef<HTMLDivElement | null>(null);
   const {
@@ -17,6 +17,7 @@ export default function InfiniteScrollPostCard({category}:InfiniteScrollPostCard
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
+    status
   } = useInfiniteQuery({
     queryKey : ['postList', category],
     queryFn : ({pageParam=''})=> getInfinitePostList(category,PAGE_SIZE, pageParam ),
@@ -34,6 +35,13 @@ export default function InfiniteScrollPostCard({category}:InfiniteScrollPostCard
     if (observerRef.current) observer.observe(observerRef.current);
     return () => observer.disconnect();
   },[hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  if(status === 'pending') return(
+    <div className="w-full text-center text-sm text-gray-400">데이터를 가져오는 중입니다...</div>
+  )
+  if(status === 'error') return(
+    <div className="w-full text-center text-sm text-gray-400">데이터를 불러오지 못했습니다.</div>
+  )
 
   return(
     <div className="w-full h-full p-2 sm:p-[30px]">
