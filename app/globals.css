@@ -51,7 +51,7 @@
   }
   .area-side {
     grid-area: side;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
   }
   .area-contents {
     grid-area: contents;
